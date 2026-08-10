@@ -1,0 +1,61 @@
+{
+  "info": {
+    "_postman_id": "285bef94-27e7-41da-bf66-b839da38e704",
+    "name": "Ai API REQUEST CALLS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57242993",
+    "_collection_link": "https://go.postman.co/collection/57242993-285bef94-27e7-41da-bf66-b839da38e704?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GROQ",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "GEMINI",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-goog-api-key",
+            "value": "{{GOOGLE_API_KEY}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"contents\": [\r\n    {\r\n      \"parts\": [\r\n        {\r\n          \"text\": \"Write a haiku about automation.\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent",
+          "protocol": "https",
+          "host": [
+            "generativelanguage",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v1beta",
+            "models",
+            "gemini-3.1-flash-lite:generateContent"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
